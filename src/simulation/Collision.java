@@ -2,9 +2,13 @@ package simulation;
 
 public abstract class Collision extends AbstractEvent{
     
-    /**
-     * Constructor for Collision
-     */
+    double time;
+    Particle[] particles;
+    int[] priorCollision;   //i assume we need this since the outline says that we need to keep track of prior collisions
+	
+	
+    /*NEEDS TO BE DONE*/
+    
     public Collision(double t, Particle[] ps) {
         // TODO implement constructor
     }
@@ -23,6 +27,6 @@ public abstract class Collision extends AbstractEvent{
      */
     public Particle[] getParticles() {
         // TODO implement this method
-        return null;
+        return null;                                      //I assume return particles
     }
 }
