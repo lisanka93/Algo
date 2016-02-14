@@ -82,8 +82,8 @@ public class MinPriorityQueue<T extends Comparable<T>> {
 	{
     		child = 2*parent;
     		                                           //find smallest childnode of parent
-    		if (child < qSize && priorityQueue.get(child+1).compareTo(priorityQueue.get(child)) < 0) {  //if child+1 smaller than child, get that one
-		{    		
+    		if (child < qSize && priorityQueue.get(child+1).compareTo(priorityQueue.get(child)) < 0) 
+    		{  //if child+1 smaller than child, get that one
 			child++;
     		}
     		                                          //if parent is larger than child
