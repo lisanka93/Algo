@@ -2,14 +2,12 @@ package simulation;
 
 public abstract class Collision extends AbstractEvent{
     
-    int c, k;
-    double time;
-    Particle[] particle;
-    int[] prevCollision;   //i assume we need this since the outline says that we need to keep track of prior collisions
+    private int c, k;
+    public double time;
+    private Particle[] particle;
+    private int[] prevCollision;   //i assume we need this since the outline says that we need to keep track of prior collisions
 	
 	
-
-    
     public Collision(double t, Particle[] ps) 
     {
     super(t);
