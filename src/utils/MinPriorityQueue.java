@@ -10,7 +10,7 @@ import java.util.ArrayList;  //lisa: need arraylist package for this class
 
 public class MinPriorityQueue<T extends Comparable<T>> {
     
-    ArrayList<T> priorityQueue();   //lisa this creates an empty queue/heap whatever
+    ArrayList<T> priorityQueue;   //lisa this creates an empty queue/heap whatever
     	private int qSize;
     	
     	
@@ -85,7 +85,7 @@ public class MinPriorityQueue<T extends Comparable<T>> {
     		}
     		                                          //if parent is larger than child
     		if (rootValue.compareTo(priorityQueue.get(child)) > 0) {                                    
-    			priorityQueue.set(parent, priorityQueue.get(child);  //move child to parentnode
+    			priorityQueue.set(parent, priorityQueue.get(child));  //move child to parentnode
     			
     			parent = child;                      //update parentIndex for its subtree
     			
