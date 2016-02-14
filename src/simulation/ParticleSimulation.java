@@ -1,4 +1,5 @@
 package simulation;
+import utils.MinPriorityQueue;
 
 //no idea how to do this
 
@@ -13,12 +14,25 @@ public class ParticleSimulation implements Runnable, ParticleEventHandler{
     private final ParticlesModel          model;
     private final ParticlesView           screen;
     
+    double time;
+    MinPriorityQueue<Event> eventQ;
     /**
      * Constructor.
      */
-    public ParticleSimulation(String name, ParticlesModel m) {
-        // TODO implement constructor
-    }
+    public ParticleSimulation(String name, ParticlesModel m) 
+   {
+        this.model = m;
+	this.time = 0.0;
+	Tick tick = new Tick(0);
+    	screen = new ParticlesView(name, m);
+    	eventQ = new MinPriorityQueue<Event>();
+    	
+    	eventQ.add(tick);
+    	//create queue of all predicted collisions
+    /* TO DO*/
+
+    	}
+   
 
     /**
      * Runs the simulation.
@@ -33,7 +47,26 @@ public class ParticleSimulation implements Runnable, ParticleEventHandler{
             e.printStackTrace();
         }
         
-        // TODO complete implementing this method
+        while(eventQ.size() > 0) 
+	{
+	//remove priority event from queue and process
+	   /* TO DO*/
+ 	}
+    }
+
+	
+    @Override
+    public void reactTo(Tick tick)
+    {
+     Tick newTick = new Tick(tick.time() + 1);
+     eventQ.add(newTick);
+    }
+
+    @Override
+    public void reactTo(Collision col)
+    {
+    //create new predicted collisions and add to queue
+     /* TO DO*/
     }
 
 }
