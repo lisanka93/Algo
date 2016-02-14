@@ -14,8 +14,8 @@ public class ParticleSimulation implements Runnable, ParticleEventHandler{
     private final ParticlesModel          model;
     private final ParticlesView           screen;
     
-    double time;
-    MinPriorityQueue<Event> eventQ;
+    private double time;
+    private MinPriorityQueue<Event> eventQ;
     /**
      * Constructor.
      */
