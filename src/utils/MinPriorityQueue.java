@@ -10,8 +10,8 @@ import java.util.ArrayList;  //lisa: need arraylist package for this class
 
 public class MinPriorityQueue<T extends Comparable<T>> {
     
-    ArrayList<T> priorityQueue;   //lisa this creates an empty queue/heap whatever
-    	private int qSize;
+    private ArrayList<T> priorityQueue;   //lisa this creates an empty queue/heap whatever
+    private int qSize;
     	
     	
     public MinPriorityQueue() {                 //lisa - constructor
@@ -30,7 +30,7 @@ public class MinPriorityQueue<T extends Comparable<T>> {
     public void add(T elem) {                  //lisa
        priorityQueue.add(elem);                //adding an element to the queue
        qSize++;                                //increasing qSize   
-      int index = qSize;                           //last position in queue/index
+       int index = qSize;                           //last position in queue/index
       
       /*insert the new element efficiently into the heap
        guys please read this its SUPER helpful. :)
@@ -47,8 +47,9 @@ public class MinPriorityQueue<T extends Comparable<T>> {
 
     
     public T remove() {
-    	if (!isEmpty()) {
-    		T removeElement = priorityQueue.get(1);        //lisa: well I assume if I did everything correctly it should just be get(1)
+    	if (!isEmpty())
+	{
+    	    T removeElement = priorityQueue.get(1);        //lisa: well I assume if I did everything correctly it should just be get(1)
             T lastElement = priorityQueue.get(qSize);      // now I proceed like outlined in the website that ive mentioned above - should make sense
             priorityQueue.set(1, lastElement);
             priorityQueue.remove(qSize);
@@ -77,20 +78,25 @@ public class MinPriorityQueue<T extends Comparable<T>> {
     	int child;
     	int parent = 1;
     	
-    	while (2*parent <= qSize) {
+    	while (2*parent <= qSize) 
+	{
     		child = 2*parent;
     		                                           //find smallest childnode of parent
     		if (child < qSize && priorityQueue.get(child+1).compareTo(priorityQueue.get(child)) < 0) {  //if child+1 smaller than child, get that one
-    			child++;
+		{    		
+			child++;
     		}
     		                                          //if parent is larger than child
-    		if (rootValue.compareTo(priorityQueue.get(child)) > 0) {                                    
+    		if (rootValue.compareTo(priorityQueue.get(child)) > 0) 
+		{                                    
     			priorityQueue.set(parent, priorityQueue.get(child));  //move child to parentnode
     			
     			parent = child;                      //update parentIndex for its subtree
     			
-    		} else {
-    		
+    		}
+		
+		else 
+		{
     			break;
     		}
     	}
