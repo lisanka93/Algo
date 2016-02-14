@@ -16,12 +16,19 @@ public abstract class AbstractEvent implements Event {
 
    
     
-    /*needs to be done*/
-    
     @Override
     public int compareTo(Event that) {
-        // TODO implement this method
-        return 0;
+    	if (this.time < that.time()) 
+	{
+    		return -1;
+    	} 
+	else if (this.time > that.time()) 
+	{
+    		return 1;
+    	} 
+	else 
+	{
+    		return 0;
+    	}
     }
-
 }
