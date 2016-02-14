@@ -5,13 +5,19 @@ public class ParticleWallCollision extends Collision {
 	public Particle particle;
 	public Wall wall;
 	
-	public ParticleWallCollision( ) {           //i assume needs to take time, particle and wall object as parameters
-		/*NEED TO DO THIS*/
+	public ParticleWallCollision(Particle par, Wall w, double t ) 
+	{        
+	super(t, new Particle[] {par});  //not sure about that
+	this.time = t;
+	this.particle = par;
+	this.wall = w; 
 	}
 
 	@Override
-	public void happen(ParticleEventHandler h) {
-		/*NEED TO DO THIS*/
+	public void happen(ParticleEventHandler h) 
+	{
+	Particle.collide(this.particle, this.wall);
+	h.reactTo(this);
 	}
 
 }
