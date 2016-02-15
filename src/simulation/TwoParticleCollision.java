@@ -3,8 +3,8 @@ package simulation;
 
 public class TwoParticleCollision extends Collision {
 	
-	Particle particleOne;
-	Particle particleTwo;
+	public Particle particleOne;
+	public Particle particleTwo;
 	
 	public TwoParticleCollision(Particle p1, Particle p2, double t)
         {   
