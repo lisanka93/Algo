@@ -40,7 +40,7 @@ public class MinPriorityQueue<T extends Comparable<T>> {
 	while(index > 1 && elem.compareTo(priorityQueue.get(index/2))<0) {    //comparing with parent node
 		priorityQueue.set(index, priorityQueue.get(index/2));           
 		index = index/2;                                 //smallest element slowly moves up the heap - beginning of array
-	}
+		}
 	priorityQueue.set(index, elem);     //inserted            
     
     }
